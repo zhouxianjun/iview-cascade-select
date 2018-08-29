@@ -40,14 +40,14 @@ npm run lint
 | 属性         | 说明         | 类型           | 默认值 |
 | ------------ | ------------ | -------------- | ------ |
 | style        | 样式         | Object         | -      |
+| label-style  | label 样式   | Object         | -      |
 | label        | label 名称   | String         | -      |
 | all          | 是否显示全部 | Boolean        | true   |
-| defaultValue | 默认值       | String\|Number | -      |
 | options      | 获取数据函数 | Function       | -      |
 | filter       | 过滤数据函数 | Function       | -      |
 
 ### Events
 
-| 事件名 | 说明                 | 参数            |
-| ------ | -------------------- | --------------- |
-| change | 每个下拉框改变时触发 | 当前下标,当前值 |
+| 事件名 | 说明                 | 参数                |
+| ------ | -------------------- | ------------------- |
+| change | 每个下拉框改变时触发 | 当前下标,当前下标值 |

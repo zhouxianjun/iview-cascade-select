@@ -1,6 +1,10 @@
 <template>
     <div id="app">
+        <Input type="text" v-model.number="a" style="width: 150px"/>
+        <Input type="text" v-model.number="b" style="width: 150px"/>
+        <div></div>
         <iview-cascade-select :selects="selects" v-model="app"></iview-cascade-select>
+        <div>{{ app }}</div>
     </div>
 </template>
 
@@ -14,7 +18,8 @@ export default {
     },
     data () {
         return {
-            app: null,
+            a: 1,
+            b: null,
             selects: [{
                 style: {
                     width: '150px'
@@ -49,6 +54,17 @@ export default {
                 }
             }]
         };
+    },
+    computed: {
+        app: {
+            get () {
+                return [this.a, this.b];
+            },
+            set (val) {
+                this.a = val[0];
+                this.b = val[1];
+            }
+        }
     }
 };
 </script>
