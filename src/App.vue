@@ -18,7 +18,7 @@ export default {
     },
     data () {
         return {
-            a: 1,
+            a: null,
             b: null,
             selects: [{
                 style: {
@@ -26,11 +26,13 @@ export default {
                 },
                 label: 'Demo',
                 all: false,
-                defaultValue: 1,
                 options: async p => {
                     return [{
                         id: 1,
-                        name: 'A'
+                        name: 'A1'
+                    }, {
+                        id: 2,
+                        name: 'A2'
                     }];
                 }
             }, {
