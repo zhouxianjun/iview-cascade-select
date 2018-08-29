@@ -1,13 +1,18 @@
 {
   "name": "iview-cascade-select",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "main": "dist/iview-cascade-select.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --mode production --target lib ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
+  "author": "Alone",
+  "license": "ISC",
   "dependencies": {
+    "iview": "^3.0.1",
+    "merge": "^1.2.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -17,6 +22,10 @@
     "@vue/eslint-config-standard": "^3.0.1",
     "lint-staged": "^7.2.2",
     "vue-template-compiler": "^2.5.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouxianjun/iview-cascade-select.git"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
