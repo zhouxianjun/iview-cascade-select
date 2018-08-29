@@ -62,7 +62,7 @@ export default {
     },
     mounted () {
         this.setValue();
-        if (this.value[0] === null && this.value[0] === undefined) {
+        if (this.value.length === 0) {
             this.load(0);
         }
     },

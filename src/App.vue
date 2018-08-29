@@ -18,7 +18,7 @@ export default {
     },
     data () {
         return {
-            a: null,
+            a: 1,
             b: null,
             selects: [{
                 style: {
