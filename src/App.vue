@@ -3,7 +3,7 @@
         <Input type="text" v-model.number="a" style="width: 150px"/>
         <Input type="text" v-model.number="b" style="width: 150px"/>
         <div></div>
-        <iview-cascade-select :selects="selects" v-model="app"></iview-cascade-select>
+        <iview-cascade-select :selects="selects" v-model="app" placeholder="please select"></iview-cascade-select>
         <div>{{ app }}</div>
     </div>
 </template>
@@ -26,13 +26,19 @@ export default {
                 },
                 label: 'Demo',
                 all: false,
+                placeholder: '请选择',
                 options: async p => {
+                    console.log(`load a... ${p}`);
                     return [{
                         id: 1,
                         name: 'A1'
                     }, {
                         id: 2,
-                        name: 'A2'
+                        name: 'A2',
+                        disabled: true
+                    }, {
+                        id: 3,
+                        name: 'A3'
                     }];
                 }
             }, {
@@ -40,16 +46,8 @@ export default {
                     width: '150px'
                 },
                 options: async p => {
-                    return [{
-                        id: 1,
-                        name: 'B1'
-                    }, {
-                        id: 2,
-                        name: 'B2'
-                    }, {
-                        id: 3,
-                        name: 'B3'
-                    }];
+                    console.log(`load b... ${p}`);
+                    return Array.from({length: 4}, (v, index) => Object.assign({}, {id: index + 1, name: `B${p * 1 + index}`}));
                 },
                 filter: (data, item) => {
                     return data.filter(d => d.id > 1);
